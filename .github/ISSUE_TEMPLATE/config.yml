@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://github.com/iacosta3994/integration-glue-pipeline#documentation
+    about: Read the complete documentation including setup guides and troubleshooting
+  - name: Setup Guide
+    url: https://github.com/iacosta3994/integration-glue-pipeline/blob/main/SETUP_GUIDE.md
+    about: Step-by-step guide to set up the integration pipeline
+  - name: Credentials Guide
+    url: https://github.com/iacosta3994/integration-glue-pipeline/blob/main/CREDENTIALS.md
+    about: How to obtain all required API keys and credentials
+  - name: Verification Guide
+    url: https://github.com/iacosta3994/integration-glue-pipeline/blob/main/VERIFICATION.md
+    about: Verify your setup is working correctly
+  - name: Troubleshooting
+    url: https://github.com/iacosta3994/integration-glue-pipeline/blob/main/docs/TROUBLESHOOTING.md
+    about: Common issues and solutions
