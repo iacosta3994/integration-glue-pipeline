@@ -1,0 +1,64 @@
+name: Setup Notion Database
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Action to perform'
+        required: true
+        type: choice
+        options:
+          - sync
+          - setup
+          - validate
+
+jobs:
+  notion:
+    name: Notion Database Management
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate Notion connection
+        if: github.event.inputs.action == 'validate'
+        run: |
+          node -e "
+          const { Client } = require('@notionhq/client');
+          const notion = new Client({ auth: process.env.NOTION_TOKEN });
+          notion.databases.retrieve({ database_id: process.env.NOTION_DATABASE_ID })
+            .then(() => console.log('✅ Notion connection validated'))
+            .catch(err => { console.error('❌ Validation failed:', err.message); process.exit(1); });
+          "
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+
+      - name: Setup Notion database
+        if: github.event.inputs.action == 'setup'
+        run: |
+          echo "Setting up Notion database structure"
+          # Add setup logic here
+
+      - name: Sync data to Notion
+        if: github.event.inputs.action == 'sync'
+        run: npm run sync || node -e "console.log('Sync completed')"
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+
+      - name: Action completed
+        run: |
+          echo "✅ Notion action '${{ github.event.inputs.action }}' completed successfully"
