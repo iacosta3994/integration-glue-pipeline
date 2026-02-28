@@ -9,11 +9,13 @@
 
 ## 🚀 Quick Start
 
-**New to this project? Start here:**
+**Want to get running in 15 minutes?** → **[Read QUICKSTART.md](./QUICKSTART.md)** ⚡
 
-1. **📝 [Read SETUP_GUIDE.md](./SETUP_GUIDE.md)** - Complete step-by-step setup instructions
-2. **🔑 [Read CREDENTIALS.md](./CREDENTIALS.md)** - Get all required API keys and tokens  
-3. **✅ [Read VERIFICATION.md](./VERIFICATION.md)** - Verify everything is working
+**Need detailed guidance?**
+
+1. **📖 [Read SETUP_GUIDE.md](./SETUP_GUIDE.md)** - Complete step-by-step setup (60-90 min)
+2. **🔑 [Read CREDENTIALS.md](./CREDENTIALS.md)** - How to get all API keys  
+3. **✅ [Read VERIFICATION.md](./VERIFICATION.md)** - Verify everything works
 
 **Already set up?** Jump to [Usage](#usage) below.
 
@@ -184,6 +186,7 @@ tail -f logs/combined.log
 ├── docker/                # Docker configs
 ├── supabase/              # Database migrations
 ├── docs/                  # Additional documentation
+├── QUICKSTART.md          # ⚡ 15-minute setup guide
 ├── CREDENTIALS.md         # 🔑 Credential setup guide
 ├── SETUP_GUIDE.md         # 📖 Complete setup walkthrough
 ├── VERIFICATION.md        # ✅ Testing & verification
@@ -356,6 +359,7 @@ View sync history in Supabase:
 
 ### 📖 Guides
 
+- **[QUICKSTART.md](./QUICKSTART.md)** - Get running in 15 minutes ⚡
 - **[SETUP_GUIDE.md](./SETUP_GUIDE.md)** - Complete setup from scratch (60-90 minutes)
 - **[CREDENTIALS.md](./CREDENTIALS.md)** - How to obtain all required credentials
 - **[VERIFICATION.md](./VERIFICATION.md)** - Verify your setup is working correctly
@@ -562,6 +566,7 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 ### Getting Help
 
 1. **Check documentation:**
+   - [Quick Start](./QUICKSTART.md)
    - [Setup Guide](./SETUP_GUIDE.md)
    - [Credentials Guide](./CREDENTIALS.md)
    - [Troubleshooting](./docs/TROUBLESHOOTING.md)
@@ -592,9 +597,8 @@ MIT License - see [LICENSE](./LICENSE) file for details.
 
 **🎉 Ready to get started?**
 
-1. Read [SETUP_GUIDE.md](./SETUP_GUIDE.md)
-2. Follow the instructions
-3. Deploy your integration!
+⚡ **Fast track:** [QUICKSTART.md](./QUICKSTART.md) (15 minutes)  
+📖 **Detailed:** [SETUP_GUIDE.md](./SETUP_GUIDE.md) (60-90 minutes)
 
 **Questions?** [Open an issue](https://github.com/iacosta3994/integration-glue-pipeline/issues/new/choose)
 
